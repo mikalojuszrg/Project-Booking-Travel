@@ -1,0 +1,23 @@
+@use "../../sass/utilities/colorVariables.scss" as color;
+
+.button {
+  padding: 1.5rem 5rem;
+  font-size: 1.5rem;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+
+  &--primary {
+    background-color: color.$base-color-dark;
+    color: color.$base-color-light;
+    border-radius: 0rem 2rem 2rem 2rem;
+  }
+
+  &--secondary {
+    background-color: yellow;
+  }
+
+  &--tertiary {
+    background-color: orange;
+  }
+}

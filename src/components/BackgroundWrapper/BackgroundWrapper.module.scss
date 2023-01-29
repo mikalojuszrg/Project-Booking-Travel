@@ -1,7 +1,9 @@
+@use "../../sass/utilities/colorVariables.scss" as color;
+
 .wrapper {
   background-color: transparent;
   min-height: 100vh;
-  border: 5rem solid rgb(125, 207, 125);
+  border: 5rem solid color.$base-color;
 
   &__div {
     width: fit-content;

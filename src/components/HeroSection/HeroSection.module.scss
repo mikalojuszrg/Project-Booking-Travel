@@ -2,21 +2,26 @@
   display: flex;
   align-items: center;
   padding: 0rem 5rem;
+  gap: 7rem;
 
   &__info {
-    width: 50%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
 
   &__heading {
-    font-size: 4rem;
+    font-size: 3.4rem;
   }
 
   &__description {
     font-size: 1.4rem;
+    margin-bottom: 4rem;
   }
 
   &__illustration {
-    width: 70%;
+    width: 60%;
 
     img {
       width: 100%;

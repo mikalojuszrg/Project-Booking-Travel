@@ -9,18 +9,15 @@ const HeroSection = () => {
       <div className={styles.container__info}>
         <div>
           <h1 className={styles.container__heading}>
-            <strong>Book an exclusive</strong>
-            <br></br>travel experience
+            <strong>Book an exclusive</strong> travel experience
           </h1>
           <p className={styles.container__description}>
-            Each property is hand-picked, personally visited and cannot be found
-            elsewhere
+            Each property is hand-picked, personally visited <br></br> and
+            cannot be found elsewhere
           </p>
           <Button variant="primary">Explore packages</Button>
         </div>
-        <div>
-          <Carousel />
-        </div>
+        <Carousel />
       </div>
       <div className={styles.container__illustration}>
         <img src={image} alt="people travel" />

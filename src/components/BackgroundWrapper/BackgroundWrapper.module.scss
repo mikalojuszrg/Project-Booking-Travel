@@ -4,9 +4,9 @@
   background-color: transparent;
   min-height: 100vh;
   border: 5rem solid color.$base-color;
+  width: fit-content;
 
   &__div {
-    width: fit-content;
     border-radius: 4rem;
     margin: -1.3rem;
     min-height: 100vh;

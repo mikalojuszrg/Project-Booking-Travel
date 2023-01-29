@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+
+  &__info {
+    width: 50%;
+  }
+
+  &__illustration {
+    width: 70%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

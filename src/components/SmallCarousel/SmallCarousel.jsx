@@ -4,9 +4,9 @@ import tokyoImage from "./assets/Tokyo.jpg";
 import baliImage from "./assets/Bali.jpg";
 import londonImage from "./assets/London.jpg";
 import Button from "../Button/Button";
-import styles from "./Carousel.module.scss";
+import styles from "./SmallCarousel.module.scss";
 
-const Carousel = () => {
+const SmallCarousel = () => {
   const images = useMemo(() => [tokyoImage, baliImage, londonImage], []);
   const [counter, setCounter] = useState(0);
   const [activeImage, setActiveImage] = useState(images[counter]);
@@ -56,4 +56,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default SmallCarousel;

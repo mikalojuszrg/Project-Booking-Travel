@@ -5,6 +5,7 @@
   border: 0;
   cursor: pointer;
   font-family: inherit;
+  display: flex;
 
   &--primary {
     background-color: color.$base-color-dark;
@@ -14,7 +15,10 @@
   }
 
   &--secondary {
-    background-color: yellow;
+    background-color: color.$tertiary-color-dark;
+    color: color.$base-color-light;
+    border-radius: 2rem;
+    padding: 1rem 1.4rem;
   }
 
   &--tertiary {

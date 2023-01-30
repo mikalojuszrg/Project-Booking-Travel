@@ -1,4 +1,5 @@
 import BackgroundWrapper from "../../components/BackgroundWrapper/BackgroundWrapper";
+import BigCarousel from "../../components/BigCarousel/BigCarousel";
 import Header from "../../components/Header/Header";
 import HeroSection from "../../components/HeroSection/HeroSection";
 
@@ -7,6 +8,7 @@ const HomePage = () => {
     <BackgroundWrapper>
       <Header />
       <HeroSection />
+      <BigCarousel />
     </BackgroundWrapper>
   );
 };

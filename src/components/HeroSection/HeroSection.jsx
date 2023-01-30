@@ -1,7 +1,7 @@
 import styles from "./HeroSection.module.scss";
 import image from "./assets/peopleTravel.jpg";
 import Button from "../Button/Button";
-import Carousel from "../Carousel/Carousel";
+import SmallCarousel from "../SmallCarousel/SmallCarousel";
 
 const HeroSection = () => {
   return (
@@ -17,7 +17,9 @@ const HeroSection = () => {
           </p>
           <Button variant="primary">Explore packages</Button>
         </div>
-        <Carousel />
+        <div className={styles.container__carousel}>
+          <SmallCarousel />
+        </div>
       </div>
       <div className={styles.container__illustration}>
         <img src={image} alt="people travel" />

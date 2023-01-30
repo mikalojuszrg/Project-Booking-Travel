@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -9,6 +10,7 @@ const Header = () => {
           <li>Home</li>
           <li>Destinations</li>
           <li>Contact</li>
+          <Button variant="secondary">Subscribe</Button>
         </ul>
       </nav>
     </header>

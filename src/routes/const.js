@@ -1,10 +1,10 @@
 import ContactsPage from "../pages/ContactsPage/ContactsPage";
 import HomePage from "../pages/HomePage/HomePage";
-import TravelPage from "../pages/TravelPage/TravelPage";
+import DestinationPage from "../pages/DestinationPage/DestinationPage";
 
-const HOME_PATH = "/";
-const TRAVEL_PATH = "/:destination";
-const CONTACTS_PATH = "/contacts";
+export const HOME_PATH = "/";
+export const DESTINATION_PATH = "/:destination";
+export const CONTACTS_PATH = "/contacts";
 
 export const routes = [
   {
@@ -12,8 +12,8 @@ export const routes = [
     Component: HomePage,
   },
   {
-    path: TRAVEL_PATH,
-    Component: TravelPage,
+    path: DESTINATION_PATH,
+    Component: DestinationPage,
   },
   {
     path: CONTACTS_PATH,

@@ -5,10 +5,17 @@ import baliImage from "../SmallCarousel/assets/Bali.jpg";
 import londonImage from "../SmallCarousel/assets/London.jpg";
 import Button from "../Button/Button";
 import styles from "./BigCarousel.module.scss";
+import { useNavigate, generatePath } from "react-router-dom";
+import { DESTINATION_PATH } from "../../routes/const";
+import { activeCountry } from "../../consts/activeCountry";
 
 const BigCarousel = () => {
-  const images = useMemo(() => [tokyoImage, baliImage, londonImage], []);
   const [counter, setCounter] = useState(0);
+  const navigate = useNavigate();
+  const destinationPath = generatePath(DESTINATION_PATH, {
+    destination: activeCountry(counter),
+  });
+  const images = useMemo(() => [tokyoImage, baliImage, londonImage], []);
   const [activeImage, setActiveImage] = useState(images[counter]);
 
   console.log(counter);
@@ -24,22 +31,12 @@ const BigCarousel = () => {
     });
   };
 
-  const activeCountry = () => {
-    if (counter === 0) {
-      return "Tokyo";
-    } else if (counter === 1) {
-      return "Bali";
-    } else {
-      return "London";
-    }
-  };
-
   return (
     <div className={styles.carousel}>
       <div>
         <h2 className={styles.carousel__heading}>Most famous places</h2>
         <p className={styles.carousel__description}>
-          Recommended - <strong>{activeCountry()}</strong>
+          Recommended - <strong>{activeCountry(counter)}</strong>
         </p>
       </div>
       <div className={styles.carousel__destinations}>
@@ -50,6 +47,9 @@ const BigCarousel = () => {
           className={styles.carousel__image}
           src={activeImage}
           alt="destination"
+          onClick={() => {
+            navigate(destinationPath);
+          }}
         />
         <Button variant="tertiary" onClick={changeImage}>
           <FaAngleRight />

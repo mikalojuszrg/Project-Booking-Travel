@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import styles from "./HeroSection.module.scss";
 import image from "./assets/peopleTravel.jpg";
 import Button from "../Button/Button";
@@ -15,7 +16,13 @@ const HeroSection = () => {
             Each property is hand-picked, personally visited <br></br> and
             cannot be found elsewhere
           </p>
-          <Button variant="primary">Explore packages</Button>
+          <HashLink
+            className={styles.container__hashLink}
+            to="#bigCarousel"
+            smooth
+          >
+            <Button variant="primary">Explore Destinations</Button>
+          </HashLink>
         </div>
         <div className={styles.container__carousel}>
           <SmallCarousel />

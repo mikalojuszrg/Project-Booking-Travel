@@ -7,6 +7,10 @@
   font-family: inherit;
   display: flex;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   &--primary {
     background-color: color.$base-color-dark;
     color: color.$base-color-light;

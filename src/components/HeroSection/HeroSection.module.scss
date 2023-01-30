@@ -31,6 +31,10 @@
     }
   }
 
+  &__hashLink {
+    text-decoration: none;
+  }
+
   &__carousel {
     @include medium {
       display: none;

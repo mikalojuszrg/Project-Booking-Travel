@@ -18,9 +18,6 @@ const BigCarousel = () => {
   const images = useMemo(() => [tokyoImage, baliImage, londonImage], []);
   const [activeImage, setActiveImage] = useState(images[counter]);
 
-  console.log(counter);
-  console.log(activeImage);
-
   useEffect(() => {
     setActiveImage(images[counter]);
   }, [counter, images]);
@@ -32,7 +29,7 @@ const BigCarousel = () => {
   };
 
   return (
-    <div className={styles.carousel}>
+    <div className={styles.carousel} id="bigCarousel">
       <div>
         <h2 className={styles.carousel__heading}>Most famous places</h2>
         <p className={styles.carousel__description}>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BiChevronDown } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./Header.module.scss";
@@ -6,6 +7,7 @@ import styles from "./Header.module.scss";
 const Header = () => {
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>Travel</div>
@@ -17,7 +19,7 @@ const Header = () => {
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
-            Destinations
+            Destinations <BiChevronDown className={styles.header__icon} />
             {showDropdown && (
               <ul className={styles.header__subNav}>
                 <li>Bali</li>

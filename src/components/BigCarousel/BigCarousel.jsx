@@ -1,13 +1,11 @@
 import { useState, useEffect, useMemo } from "react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-import tokyoImage from "../SmallCarousel/assets/Tokyo.jpg";
-import baliImage from "../SmallCarousel/assets/Bali.jpg";
-import londonImage from "../SmallCarousel/assets/London.jpg";
 import Button from "../Button/Button";
 import styles from "./BigCarousel.module.scss";
 import { useNavigate, generatePath } from "react-router-dom";
 import { DESTINATION_PATH } from "../../routes/const";
 import { activeCountry } from "../../consts/activeCountry";
+import { destinationData } from "../../consts/destinationData";
 
 const BigCarousel = () => {
   const [counter, setCounter] = useState(0);
@@ -15,7 +13,11 @@ const BigCarousel = () => {
   const destinationPath = generatePath(DESTINATION_PATH, {
     destination: activeCountry(counter),
   });
-  const images = useMemo(() => [tokyoImage, baliImage, londonImage], []);
+  const destinationThumbnails = destinationData.map(
+    (destination) => destination.thumbnail
+  );
+
+  const images = useMemo(() => destinationThumbnails);
   const [activeImage, setActiveImage] = useState(images[counter]);
 
   useEffect(() => {

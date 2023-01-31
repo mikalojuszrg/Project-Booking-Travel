@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { SubscriptionContext } from "../../contexts/SubscriptionContext";
 import Button from "../Button/Button";
 import styles from "./Header.module.scss";
 
 const Header = () => {
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const { toggleSubscription, showSubscription } =
+    useContext(SubscriptionContext);
+
+  console.log(showSubscription);
 
   return (
     <header className={styles.header}>
@@ -35,7 +40,9 @@ const Header = () => {
           >
             Contact
           </li>
-          <Button variant="secondary">Subscribe</Button>
+          <Button variant="secondary" onClick={toggleSubscription}>
+            Subscribe
+          </Button>
         </ul>
       </nav>
     </header>

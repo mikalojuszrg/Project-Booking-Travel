@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { SubscriptionProvider } from "./contexts/SubscriptionContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <SubscriptionProvider>
+        <App />
+      </SubscriptionProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

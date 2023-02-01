@@ -18,7 +18,7 @@ const Header = () => {
       <div className={styles.header__logo}>Travel</div>
       <nav>
         <ul className={styles.header__nav}>
-          <li>Home</li>
+          <li onClick={() => navigate("/")}>Home</li>
           <li
             className={styles.header__dropdown}
             onMouseEnter={() => setShowDropdown(true)}

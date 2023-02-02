@@ -1,0 +1,24 @@
+.form {
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 1rem 4rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input,
+  select {
+    width: 400px;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    border: 1px solid black;
+    font-size: 2rem;
+    border-radius: 2rem;
+    font-family: inherit;
+  }
+}
+
+.react-calendar {
+  width: 20%;
+}

@@ -44,6 +44,9 @@ const SmallCarousel = () => {
           className={styles.carousel__image}
           src={activeImage}
           alt="destination"
+          onClick={() => {
+            navigate(destinationPath);
+          }}
         />
         <Button variant="tertiary" onClick={changeImage}>
           <FaAngleRight />

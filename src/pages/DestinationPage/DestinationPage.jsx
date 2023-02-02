@@ -4,9 +4,13 @@ import BackgroundWrapper from "../../components/BackgroundWrapper/BackgroundWrap
 import Header from "../../components/Header/Header";
 import SubscribeModal from "../../components/SubscriptionModal/SubscribeModal";
 import TripPlanForm from "../../components/TripPlanForm/TripPlanForm";
+import { destinationData } from "../../consts/destinationData";
 
 const DestinationPage = () => {
   const { destination } = useParams();
+  const selectedDestinationThumbnail = destinationData
+    .filter((data) => data.destination === destination)
+    .map((data) => data.thumbnail)[0];
 
   return (
     <BackgroundWrapper>
@@ -16,7 +20,14 @@ const DestinationPage = () => {
       <p className={styles.page__description}>
         Select a plan, insert details, and get the best trip deal ever.
       </p>
-      <TripPlanForm />
+      <section className={styles.page__hero}>
+        <TripPlanForm />
+        <img
+          src={selectedDestinationThumbnail}
+          alt="destination"
+          className={styles.page__thumbnail}
+        />
+      </section>
     </BackgroundWrapper>
   );
 };

@@ -38,9 +38,6 @@ const SubscribeModal = () => {
     setSubscribed(false);
   };
 
-  console.log(emailList);
-  console.log(content.email);
-
   return (
     <aside
       className={showSubscription ? styles["modal--on"] : styles["modal--off"]}

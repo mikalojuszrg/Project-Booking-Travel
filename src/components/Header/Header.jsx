@@ -11,8 +11,6 @@ const Header = () => {
   const { toggleSubscription, showSubscription } =
     useContext(SubscriptionContext);
 
-  console.log(showSubscription);
-
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>Travel</div>

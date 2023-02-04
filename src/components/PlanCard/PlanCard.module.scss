@@ -1,0 +1,26 @@
+@use "../../sass/utilities/colorVariables.scss" as color;
+@import "../../sass/mixins/mediaQueries.scss";
+
+.card {
+  width: 30%;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 1rem;
+  border: 2px solid color.$base-color-dark;
+  border-radius: 2rem;
+
+  &__image {
+    width: 100%;
+    max-height: 30rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}

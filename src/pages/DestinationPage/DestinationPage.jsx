@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import styles from "./DestinationPage.module.scss";
 import BackgroundWrapper from "../../components/BackgroundWrapper/BackgroundWrapper";
 import Header from "../../components/Header/Header";
 import SubscribeModal from "../../components/SubscriptionModal/SubscribeModal";
 import TripPlanForm from "../../components/TripPlanForm/TripPlanForm";
+import ContactUsSection from "../../components/ContactUsSection/ContactUsSection";
 import { destinationData } from "../../consts/destinationData";
 
 const DestinationPage = () => {
@@ -11,6 +13,10 @@ const DestinationPage = () => {
   const selectedDestinationThumbnail = destinationData
     .filter((data) => data.destination === destination)
     .map((data) => data.thumbnail)[0];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <BackgroundWrapper>
@@ -28,6 +34,7 @@ const DestinationPage = () => {
           className={styles.page__thumbnail}
         />
       </section>
+      <ContactUsSection />
     </BackgroundWrapper>
   );
 };

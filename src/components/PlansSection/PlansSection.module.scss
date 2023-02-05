@@ -1,8 +1,11 @@
+@use "../../sass/utilities/colorVariables.scss" as color;
+@import "../../sass/mixins/mediaQueries.scss";
+
 .container {
   margin-top: 7rem;
   margin-bottom: 7rem;
   display: flex;
-  gap: 4rem;
+  gap: 6rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,5 +19,31 @@
     display: flex;
     justify-content: space-between;
     padding: 0rem 5rem;
+
+    @include medium {
+      gap: 2rem;
+
+      & > *:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+
+      & > *:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+
+      & > *:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @include small {
+      & > *:not(:nth-child(1)) {
+        display: none;
+      }
+    }
   }
 }

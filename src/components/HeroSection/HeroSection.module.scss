@@ -6,6 +6,10 @@
   padding: 0rem 5rem;
   gap: 2rem;
 
+  @include small {
+    display: block;
+  }
+
   &__info {
     width: 40%;
     display: flex;

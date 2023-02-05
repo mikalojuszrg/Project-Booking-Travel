@@ -10,6 +10,11 @@
   &__logo {
     font-size: 3rem;
     font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &__icon {
@@ -36,6 +41,7 @@
       padding: 2rem;
       text-decoration: none;
       text-align: center;
+      cursor: pointer;
 
       &:hover {
         background-color: aliceblue;
@@ -80,9 +86,9 @@
 
   &__hamburgerNav {
     @include semi-medium {
-      width: 70%;
+      width: 71%;
       background-color: color.$base-color-light;
-      position: fixed;
+      position: absolute;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -96,9 +102,11 @@
       right: 0;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 3rem;
 
       li {
         justify-content: center;
+        cursor: pointer;
       }
     }
   }

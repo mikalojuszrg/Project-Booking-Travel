@@ -1,4 +1,5 @@
 @use "../../sass/utilities/colorVariables.scss" as color;
+@import "../../sass/mixins/mediaQueries.scss";
 
 .button {
   font-size: 1.5rem;
@@ -16,6 +17,14 @@
     color: color.$base-color-light;
     border-radius: 0rem 2rem 2rem 2rem;
     padding: 1.5rem 5rem;
+
+    @include medium {
+      padding: 1rem 3rem;
+    }
+
+    @include small {
+      padding: 1rem 2rem;
+    }
   }
 
   &--secondary {

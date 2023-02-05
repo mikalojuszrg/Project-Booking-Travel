@@ -31,7 +31,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__logo}>Travel</div>
+      <div className={styles.header__logo} onClick={() => navigate("/")}>
+        Travel
+      </div>
       <nav>
         <AiOutlineMenu
           className={styles.header__hamburger}
@@ -52,9 +54,9 @@ const Header = () => {
               Destinations <BiChevronDown className={styles.header__icon} />
               {showDropdown && (
                 <ul className={styles.header__subNav}>
-                  <li>Bali</li>
-                  <li>London</li>
-                  <li>Tokyo</li>
+                  <li onClick={() => navigate("/Bali")}>Bali</li>
+                  <li onClick={() => navigate("/London")}>London</li>
+                  <li onClick={() => navigate("/Tokyo")}>Tokyo</li>
                 </ul>
               )}
             </li>

@@ -6,7 +6,7 @@
   padding: 0rem 5rem;
   gap: 2rem;
 
-  @include small {
+  @include semi-medium {
     display: block;
   }
 
@@ -16,10 +16,19 @@
     flex-direction: column;
     gap: 3rem;
     margin-top: 3rem;
+
+    @include semi-medium {
+      width: 100%;
+      text-align: center;
+
+      Button {
+        margin: 0 auto;
+      }
+    }
   }
 
   &__heading {
-    font-size: 2.5vw;
+    font-size: 3rem;
   }
 
   &__description {
@@ -29,6 +38,10 @@
 
   &__illustration {
     width: 90%;
+
+    @include semi-medium {
+      width: 100%;
+    }
 
     img {
       width: 100%;

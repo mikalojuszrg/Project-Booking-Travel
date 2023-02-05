@@ -5,6 +5,7 @@ import BackgroundWrapper from "../../components/BackgroundWrapper/BackgroundWrap
 import Header from "../../components/Header/Header";
 import SubscribeModal from "../../components/SubscriptionModal/SubscribeModal";
 import TripPlanForm from "../../components/TripPlanForm/TripPlanForm";
+import PlansSection from "../../components/PlansSection/PlansSection";
 import ContactUsSection from "../../components/ContactUsSection/ContactUsSection";
 import { destinationData } from "../../consts/destinationData";
 
@@ -34,6 +35,7 @@ const DestinationPage = () => {
           className={styles.page__thumbnail}
         />
       </section>
+      <PlansSection />
       <ContactUsSection />
     </BackgroundWrapper>
   );

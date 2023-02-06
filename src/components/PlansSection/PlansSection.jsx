@@ -18,7 +18,7 @@ const PlansSection = () => {
   }, [selectedIndex, planSelection]);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="planssection">
       <h2 className={styles.container__heading}>Check our plans</h2>
       <div className={styles.container__cards}>
         {planSelection.map((plan, index) => (

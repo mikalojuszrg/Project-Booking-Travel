@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import styles from "./HeroSection.module.scss";
 import image from "./assets/peopleTravel.jpg";
@@ -5,6 +6,20 @@ import Button from "../Button/Button";
 import SmallCarousel from "../SmallCarousel/SmallCarousel";
 
 const HeroSection = () => {
+  const [navigateTo, setNavigateTo] = useState(true);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth > 1024) {
+        setNavigateTo(false);
+      }
+    };
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [navigateTo]);
+
   return (
     <section className={styles.container}>
       <div className={styles.container__info}>
@@ -18,7 +33,7 @@ const HeroSection = () => {
           </p>
           <HashLink
             className={styles.container__hashLink}
-            to="#bigCarousel"
+            to={navigateTo ? "#planssection" : "#bigCarousel"}
             smooth
           >
             <Button variant="primary">Explore Destinations</Button>

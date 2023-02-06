@@ -1,5 +1,9 @@
 export const postSubscription = (email) => {
-  fetch("http://localhost:5000/subscriptions", {
+  if (typeof email !== "object") {
+    return Promise.reject(new Error("Wrong value"));
+  }
+
+  return fetch("http://localhost:5000/subscriptions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,9 +17,9 @@ export const postSubscription = (email) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      return data;
     })
     .catch((error) => {
-      console.error(error);
+      throw error;
     });
 };

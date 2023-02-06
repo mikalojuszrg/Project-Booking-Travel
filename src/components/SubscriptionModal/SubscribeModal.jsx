@@ -4,7 +4,7 @@ import { SubscriptionContext } from "../../contexts/SubscriptionContext";
 import styles from "./SubscribeModal.module.scss";
 import Button from "../Button/Button";
 import mountainPicture from "./assets/mountain.jpg";
-import { postSubscription } from "../../consts/postSubscription";
+import { postSubscription } from "../../utils/postSubscription";
 import { useEffect } from "react";
 
 const SubscribeModal = () => {

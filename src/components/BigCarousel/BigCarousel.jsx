@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import styles from "./BigCarousel.module.scss";
 import { useNavigate, generatePath } from "react-router-dom";
 import { DESTINATION_PATH } from "../../routes/const";
-import { activeCountry } from "../../consts/activeCountry";
+import { activeCountry } from "../../utils/activeCountry";
 import { destinationData } from "../../consts/destinationData";
 
 const BigCarousel = () => {

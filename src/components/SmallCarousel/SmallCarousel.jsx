@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import { activeCountry } from "../../consts/activeCountry";
+import { activeCountry } from "../../utils/activeCountry";
 import Button from "../Button/Button";
 import styles from "./SmallCarousel.module.scss";
 import { destinationData } from "../../consts/destinationData";

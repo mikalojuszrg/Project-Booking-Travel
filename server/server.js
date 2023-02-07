@@ -16,9 +16,9 @@ const client = new MongoClient(uri);
 
 app.use(cors());
 
-app.get("/api", (req, res) => {
-  res.json({ users: ["userOne", "userTwo", "userThree"] });
-});
+// app.get("/api", (req, res) => {
+//   res.json({ users: ["userOne", "userTwo", "userThree"] });
+// });
 
 app.get("/subscriptions", async (req, res) => {
   try {
@@ -69,6 +69,34 @@ app.post("/bookings", async (req, res) => {
     const data = await con
       .db("travel")
       .collection("bookings")
+      .insertOne(req.body);
+    await con.close();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send({
+      message: "An error occurred while processing your request",
+      error,
+    });
+  }
+});
+
+app.get("/comments", async (req, res) => {
+  try {
+    const con = await client.connect();
+    const data = await con.db("travel").collection("comments").find().toArray();
+    await con.close();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+app.post("/comments", async (req, res) => {
+  try {
+    const con = await client.connect();
+    const data = await con
+      .db("travel")
+      .collection("comments")
       .insertOne(req.body);
     await con.close();
     res.send(data);

@@ -62,14 +62,12 @@ const SubscribeModal = () => {
             >
               {({ isSubmitted }) => (
                 <Form className={styles.modal__form}>
-                  <div>
-                    <Field type="email" name="email" />
-                    <ErrorMessage
-                      className={styles.modal__error}
-                      name="email"
-                      component="div"
-                    />
-                  </div>
+                  <Field type="email" name="email" placeholder="email" />
+                  <ErrorMessage
+                    className={styles.modal__error}
+                    name="email"
+                    component="div"
+                  />
                   <Button
                     variant="secondary"
                     type="submit"

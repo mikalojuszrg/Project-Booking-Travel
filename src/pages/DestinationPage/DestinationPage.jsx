@@ -4,7 +4,7 @@ import styles from "./DestinationPage.module.scss";
 import BackgroundWrapper from "../../components/BackgroundWrapper/BackgroundWrapper";
 import Header from "../../components/Header/Header";
 import SubscribeModal from "../../components/SubscriptionModal/SubscribeModal";
-import TripPlanForm from "../../components/TripPlanForm/TripPlanForm";
+import TripPlanForm from "../../components/TripPlanForm/TripPlanFormNew";
 import PlansSection from "../../components/PlansSection/PlansSection";
 import ContactUsSection from "../../components/ContactUsSection/ContactUsSection";
 import { destinationData } from "../../consts/destinationData";

@@ -48,7 +48,7 @@ const ContactForm = () => {
           {({ isSubmitting }) => (
             <Form className={styles.container__form}>
               <div>
-                <Field type="email" name="email" />
+                <Field type="email" name="email" placeholder="email" />
                 <ErrorMessage
                   className={styles.container__error}
                   name="email"
@@ -56,7 +56,11 @@ const ContactForm = () => {
                 />
               </div>
               <div>
-                <Field as="textarea" name="comment" />
+                <Field
+                  as="textarea"
+                  name="comment"
+                  placeholder="Share what's on your mind"
+                />
                 <ErrorMessage
                   className={styles.container__error}
                   name="comment"

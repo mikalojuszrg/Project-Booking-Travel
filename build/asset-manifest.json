@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f88b556b.css",
+    "main.js": "/static/js/main.683ced02.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/mountain.jpg": "/static/media/mountain.d21a009b6e76bd96628e.jpg",
+    "static/media/trip.jpg": "/static/media/trip.6761cf94f1bad1af82c8.jpg",
+    "static/media/education.jpg": "/static/media/education.34bd58fb10f8ed8b1d63.jpg",
+    "static/media/relaxation.jpg": "/static/media/relaxation.cb5f34116fa583c8619d.jpg",
+    "static/media/contact.png": "/static/media/contact.cc26c930716a20eaa4f1.png",
+    "static/media/London.jpg": "/static/media/London.b9fe570a4fda05afbc49.jpg",
+    "static/media/peopleTravel.jpg": "/static/media/peopleTravel.91d886da4397388cba2d.jpg",
+    "static/media/Tokyo.jpg": "/static/media/Tokyo.161f5db68b4a6d9fd0f8.jpg",
+    "static/media/Bali.jpg": "/static/media/Bali.35e570315fb6e7fb9303.jpg",
+    "static/media/sightseeing.jpg": "/static/media/sightseeing.732585ceb4b24334a8a2.jpg",
+    "index.html": "/index.html",
+    "main.f88b556b.css.map": "/static/css/main.f88b556b.css.map",
+    "main.683ced02.js.map": "/static/js/main.683ced02.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f88b556b.css",
+    "static/js/main.683ced02.js"
+  ]
+}

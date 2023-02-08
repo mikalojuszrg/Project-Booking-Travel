@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import * as Yup from "yup";
 import { GrClose, GrCheckmark } from "react-icons/gr";
 import { SubscriptionContext } from "../../contexts/SubscriptionContext";
 import styles from "./SubscribeModal.module.scss";
@@ -6,6 +7,7 @@ import Button from "../Button/Button";
 import mountainPicture from "./assets/mountain.jpg";
 import { postSubscription, validateEmail } from "../../utils/subscriptionFetch";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import FormikInput from "../FormikInput/FormikInput";
 
 const SubscribeModal = () => {
   const [subscribed, setSubscribed] = useState(false);
@@ -24,6 +26,16 @@ const SubscribeModal = () => {
     setSubscribed(false);
   };
 
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Email is not valid")
+      .required("Required")
+      .test("email-exists", "Email already exists", async (value) => {
+        const emailExists = await validateEmail(value);
+        return !emailExists;
+      }),
+  });
+
   return (
     <aside
       className={showSubscription ? styles["modal--on"] : styles["modal--off"]}
@@ -40,34 +52,12 @@ const SubscribeModal = () => {
             <h2 className={styles.modal__subheading}>Subscribe now</h2>
             <Formik
               initialValues={{ email: "" }}
-              validate={async (values) => {
-                const errors = {};
-
-                if (!values.email) {
-                  errors.email = "required";
-                }
-
-                try {
-                  const emailExists = await validateEmail(values.email);
-                  if (emailExists) {
-                    errors.email = "Email already exists";
-                  }
-                } catch (error) {
-                  throw error;
-                }
-
-                return errors;
-              }}
+              validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
               {({ isSubmitted }) => (
                 <Form className={styles.modal__form}>
-                  <Field type="email" name="email" placeholder="email" />
-                  <ErrorMessage
-                    className={styles.modal__error}
-                    name="email"
-                    component="div"
-                  />
+                  <FormikInput type="email" name="email" placeholder="email" />
                   <Button
                     variant="secondary"
                     type="submit"

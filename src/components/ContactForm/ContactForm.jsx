@@ -1,9 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import FormikInput from "../FormikInput/FormikInput";
 import Button from "../Button/Button";
 import styles from "./ContactForm.module.scss";
 import tripPicture from "./assets/trip.jpg";
 import { postComment } from "../../utils/commentFetch";
-import { validateEmail } from "../../utils/commentFetch";
 
 const ContactForm = () => {
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
@@ -11,6 +12,11 @@ const ContactForm = () => {
     resetForm();
     setSubmitting(false);
   };
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Email is not vaid").required("Required"),
+    comment: Yup.string().required("Required"),
+  });
 
   return (
     <section className={styles.container}>
@@ -21,40 +27,12 @@ const ContactForm = () => {
             email: "",
             comment: "",
           }}
-          validate={async (values) => {
-            const errors = {};
-
-            if (!values.email) {
-              errors.email = "Required";
-            }
-
-            if (!values.comment) {
-              errors.comment = "Required";
-            }
-
-            try {
-              const emailExists = await validateEmail(values.email);
-              if (emailExists) {
-                errors.email = "Email already exists";
-              }
-            } catch (error) {
-              throw error;
-            }
-
-            return errors;
-          }}
+          validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <Form className={styles.container__form}>
-              <div>
-                <Field type="email" name="email" placeholder="email" />
-                <ErrorMessage
-                  className={styles.container__error}
-                  name="email"
-                  component="div"
-                />
-              </div>
+              <FormikInput type="email" name="email" placeholder="Email" />
               <div>
                 <Field
                   as="textarea"
@@ -62,7 +40,7 @@ const ContactForm = () => {
                   placeholder="Share what's on your mind"
                 />
                 <ErrorMessage
-                  className={styles.container__error}
+                  // className={styles.container__error}
                   name="comment"
                   component="div"
                 />

@@ -1,6 +1,10 @@
 # Tools
 
--React 
--Node.js
--SCSS modules
--The fun stuff (formik, reactContext, routing)
+React 
+
+Node.js
+
+SCSS modules
+
+
+The fun stuff - formik, reactContext, routing

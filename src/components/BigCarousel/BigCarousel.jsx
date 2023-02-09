@@ -17,7 +17,7 @@ const BigCarousel = () => {
     (destination) => destination.thumbnail
   );
 
-  const images = useMemo(() => destinationThumbnails);
+  const images = destinationThumbnails;
   const [activeImage, setActiveImage] = useState(images[counter]);
 
   useEffect(() => {

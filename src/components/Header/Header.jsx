@@ -10,8 +10,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const { toggleSubscription, showSubscription } =
-    useContext(SubscriptionContext);
+  const { toggleSubscription } = useContext(SubscriptionContext);
 
   const toggleShowNav = () => {
     setShowNav((prevValue) => !prevValue);

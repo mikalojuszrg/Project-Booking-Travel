@@ -6,7 +6,7 @@ import styles from "./SubscribeModal.module.scss";
 import Button from "../Button/Button";
 import mountainPicture from "./assets/mountain.jpg";
 import { postSubscription, validateEmail } from "../../utils/subscriptionFetch";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import FormikInput from "../FormikInput/FormikInput";
 
 const SubscribeModal = () => {

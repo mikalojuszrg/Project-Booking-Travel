@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Button from "../Button/Button";
 import styles from "./BigCarousel.module.scss";

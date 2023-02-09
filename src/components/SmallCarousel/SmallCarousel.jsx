@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { activeCountry } from "../../utils/activeCountry";
 import Button from "../Button/Button";

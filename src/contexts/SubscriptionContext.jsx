@@ -9,6 +9,8 @@ const SubscriptionProvider = ({ children }) => {
     setShowSubscription((prevValue) => !prevValue);
   };
 
+  console.log(showSubscription);
+
   return (
     <SubscriptionContext.Provider
       value={{ showSubscription, toggleSubscription }}

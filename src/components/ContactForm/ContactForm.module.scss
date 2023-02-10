@@ -11,6 +11,15 @@
   &__heading {
     margin: 0;
     font-size: 3rem;
+    text-align: center;
+  }
+
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 
   &__error {

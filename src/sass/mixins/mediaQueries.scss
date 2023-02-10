@@ -21,3 +21,9 @@
     @content;
   }
 }
+
+@mixin semi-small {
+  @media (max-width: 400px) {
+    @content;
+  }
+}

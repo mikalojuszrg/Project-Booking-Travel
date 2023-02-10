@@ -36,7 +36,7 @@ const HeroSection = () => {
             to={navigateTo ? "#planssection" : "#bigCarousel"}
             smooth
           >
-            <Button variant="primary">Explore Destinations</Button>
+            <Button variant="primary">Explore Packages</Button>
           </HashLink>
         </div>
         <div className={styles.container__carousel}>

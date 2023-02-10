@@ -33,17 +33,13 @@ const ContactForm = () => {
           {({ isSubmitting }) => (
             <Form className={styles.container__form}>
               <FormikInput type="email" name="email" placeholder="Email" />
-              <div>
+              <div className={styles.container__comment}>
                 <Field
                   as="textarea"
                   name="comment"
                   placeholder="Share what's on your mind"
                 />
-                <ErrorMessage
-                  // className={styles.container__error}
-                  name="comment"
-                  component="div"
-                />
+                <ErrorMessage name="comment" component="div" />
               </div>
 
               <Button variant="primary" type="submit" disabled={isSubmitting}>

@@ -87,7 +87,7 @@
   &__hamburgerNav {
     @include semi-medium {
       width: 71%;
-      background-color: color.$base-color-light;
+      background-color: color.$base-color-lighter;
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -103,6 +103,14 @@
       margin-left: auto;
       margin-right: auto;
       margin-top: 3rem;
+
+      @include small {
+        width: 60%;
+      }
+
+      @include semi-small {
+        width: 50%;
+      }
 
       li {
         justify-content: center;
